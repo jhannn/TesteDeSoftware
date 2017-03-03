@@ -9,6 +9,30 @@ var Secretaria = function(curso, requerimentos, alunos, professores){
   this.professores = professores;
 };
 
+Secretaria.prototype.adicionarNovoAluno = function(nome, matricula, historico, curso){
+  var auxArray=this.alunos;
+  for (var i = 0; i < auxArray.length; i++) {
+    if(auxArray[i].matricula==matricula){
+      return null;
+    }
+  }
+  var novoAluno=new Aluno(nome, matricula, historico, this.curso);
+  this.alunos.push(novoAluno);
+  return novoAluno;
+};
+
+Secretaria.prototype.adicionarNovoProfessor = function(matricula, nome){
+  var auxArray=this.professores;
+  for (var i = 0; i < auxArray.length; i++) {
+    if(auxArray[i].matricula==matricula){
+      return null;
+    }
+  }
+  var novoProfessor=new Professor(matricula, nome);
+  this.professores.push(novoProfessor);
+  return novoProfessor;
+};
+
 Secretaria.prototype.requererCertificacao = function(aluno, componentCurricular, semestreReferente, data){
   if (!buscarPorAlunoAndComponenteAndSemestre(aluno, componentCurricular, semestreReferente)){
     if (qtdDeRequerimentosDeAlunoNoSemestre(aluno, semestreReferente < 4)){
@@ -41,39 +65,5 @@ Secretaria.prototype.qtdDeRequerimentosDoAlunoNoSemestre = function(aluno, semes
   return contadorDisciplinas;
 };
 
-Secretaria.prototype.adicionarNovoAluno = function(nome, matricula, historico, curso){
-  var auxArray=this.alunos;
-  for (var i = 0; i < auxArray.length; i++) {
-    if(auxArray[i].matricula==matricula){
-      return null;
-    }
-  }
-  var novoAluno=new Aluno(nome, matricula, historico, this.curso);
-  this.alunos.push(novoAluno);
-  return novoAluno;
-};
-
-Secretaria.prototype.adicionarNovoProfessor = function(matricula, nome){
-  var auxArray=this.professores;
-  for (var i = 0; i < auxArray.length; i++) {
-    if(auxArray[i].matricula==matricula){
-      return null;
-    }
-  }
-  var novoProfessor=new Professor(matricula, nome);
-  this.professores.push(novoProfessor);
-  return novoProfessor;
-};
-
-var instancia = null;
-
-var getInstacia = function(curso, requerimentos, alunos, professores) {
-  if (!this.instancia) {
-    this.instancia=new Secretaria(curso, requerimentos, alunos, professores);
-    return this.instancia;
-  }
-  return this.instancia;
-};
 
 module.exports = Secretaria;
-module.exports.getInstanciaSecretaria = getInstacia;

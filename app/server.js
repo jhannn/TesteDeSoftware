@@ -43,20 +43,8 @@ app.post('/api/adicionar/Secretaria', function(req, res) {
   }
 });
 
-app.post('/api/adicionar/Aluno', function(req, res) {
-  var aluno = this.secretaria.adicionarNovoAluno(req.body.nome, req.body.matricula, req.body.historico, req.body.curso);
-  if (aluno === undefined) {
-    res
-    .status(404)
-    .send({"status":"falhou"});
-  } else {
-    res
-    .status(201)
-    .send(aluno);
-  }
-});
-
 app.post('/api/adicionar/Professor', function(req, res) {
+  console.log(req);
   var professor = this.secretaria.adicionarNovoProfessor(req.body.matricula, req.body.nome);
   if (professor === undefined) {
     res
@@ -69,21 +57,21 @@ app.post('/api/adicionar/Professor', function(req, res) {
   }
 });
 
-// app.post('/api/adicionar/ComponenteCurricular', function(req, res) {
-//   console.log(req);
-//     //console.log(this.secretaria.curso);
-//   var componenteCurricular = this.secretaria.curso.adicionarNovoComponenenteCurricular(req.body.nome, req.body.cargaHoraria);
+app.post('/api/adicionar/ComponenteCurricular', function(req, res) {
+  console.log(req);
+    //console.log(this.secretaria.curso);
+  var componenteCurricular = this.secretaria.curso.adicionarNovoComponenenteCurricular(req.body.nome, req.body.cargaHoraria);
 
-//   if (componenteCurricular === undefined) {
-//     res
-//       .status(404)
-//       .send({"status":"falhou"});
-//   } else {
-//     res
-//       .status(201)
-//       .send(componenteCurricular);
-//   }
-// });
+  if (componenteCurricular === undefined) {
+    res
+      .status(404)
+      .send({"status":"falhou"});
+  } else {
+    res
+      .status(201)
+      .send(componenteCurricular);
+  }
+});
 
 // Rodar Servidor
 app.listen(3000, function() {
