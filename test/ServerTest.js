@@ -20,4 +20,56 @@ describe('Testes API', function() {
       });
     });
   });
+
+//   describe('Populando API', function() {
+//     it('Adiconando uma Secretaria', function(done) {
+//       chai.request(server)
+//       .post('/api/adicionar/Secretaria')
+//       .set('content-type', 'application/x-www-form-urlencoded')
+//       .send(Mock.secretaria)
+//       .end(function(err, res) {
+//         expect(res).to.have.status(201);
+//         expect(res.body.curso).to.have.property('nome').and.equal('Tads');
+//         done();
+//       });
+//     });
+
+//     it('Adiconando um Novo Aluno a Secretaria', function(done) {
+//       chai.request(server)
+//       .post('/api/adicionar/Aluno')
+//       .set('content-type', 'application/x-www-form-urlencoded')
+//       .send({'nome':'Johann', 'matricula': '20123123124', 'historico': Mock.historico, 'curso': Mock.curso})
+//       .end(function(err, res) {
+//         expect(res).to.have.status(201);
+//         expect(res.body.curso).to.have.property('nome').and.equal('Tads');
+//         done();
+//       });
+//     });
+
+//     it('Adiconando um Novo Professor a Secretaria', function(done) {
+//       chai.request(server)
+//       .post('/api/adicionar/Professor')
+//       .set('content-type', 'application/x-www-form-urlencoded')
+//       .send({'nome':'Felipao', 'matricula': '578412'})
+//       .end(function(err, res) {
+//         expect(res).to.have.status(201);
+//         expect(res.body).to.have.property('matricula').and.equal('578412');
+//         done();
+//       });
+//     });
+
+//     it('Adiconando um Novo Componente Curricular no Curso', function(done) {
+//       chai.request(server)
+//       .post('/api/adicionar/ComponenteCurricular')
+//       .set('content-type', 'application/x-www-form-urlencoded')
+//       .send({'nome':'TDD', 'cargaHoraria': '80'})
+//       .end(function(err, res) {
+//         console.log(res);
+//         expect(res).to.have.status(201);
+//         expect(res.body).to.have.property('nome').and.equal('TDD');
+//         expect(res.body).to.have.property('cargaHoraria').and.equal('80');
+//         done();
+//       });
+//     });
+//   });
 });
