@@ -22,7 +22,7 @@ describe('Testes API', function() {
   });
 
   describe('Populando API', function() {
-    it('Adiconando uma Secretaria', function(done) {
+    it('Escolher curso do para Secretaria', function(done) {
       chai.request(server)
       .post('/api/adicionar/Secretaria')
       .set('content-type', 'application/x-www-form-urlencoded')
@@ -68,7 +68,7 @@ describe('Testes API', function() {
         console.log(res);
         expect(res).to.have.status(201);
         expect(res.body).to.have.property('nome').and.equal('TDD');
-        expect(res.body).to.have.property('cargaHoraria').and.equal('80');
+        expect(res.body).to.have.property('cargaHoraria').and.equal(80);
         done();
       });
     });

@@ -25,6 +25,13 @@ describe('# Teste da classe Curso', function() {
         novoComponenteAdicionadoNoCurso.should.not.be.null;
       });
 
+      // it('Adicionar novo Componente Curricular', function() {
+        // var curso = CursoHelper(Mock.curso);
+        // var curso.componenteCurriculares = undefined;
+        // var novoComponenteAdicionadoNoCurso = curso.adicionarNovoComponenenteCurricular('Tdd', 80);
+        // novoComponenteAdicionadoNoCurso.should.not.be.null;
+      // });
+
       it('Adicionar o mesmo Componente Curricular ja cadastrado', function() {
         var curso = CursoHelper(Mock.curso);
         curso.adicionarNovoComponenenteCurricular('Tdd', 80);

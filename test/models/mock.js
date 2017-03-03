@@ -1,23 +1,25 @@
+var Curso = require('../app/models/Curso');
+
 var professor = {
   'matricula': '75847',
   'nome': 'Minora'
 };
 
 var componenteCurricularTeste = {
-  'nome':'Teste de software', 
+  'nome':'Teste de software',
   'cargaHoraria': 80
 };
 
 var componenteCurricularJogos = {
-  'nome':'Jogos', 
+  'nome':'Jogos',
   'cargaHoraria': 80
 };
 
-var curso = {
+var curso = new Curso({
   'nome': 'Tads',
   'cargaHoraria': 2160,
   'componenteCurriculares':[]
-};
+});
 
 var disciplina = {
   'situacao': 'Cursando',
